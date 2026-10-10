@@ -1,0 +1,344 @@
+/* GRUNDSTIL: Figma-farver og lokalt leverede skrifter. */
+@font-face{font-family:'Anonymous Pro';src:url('../assets/fonts/anonymous-pro-700.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:Inter;src:url('../assets/fonts/inter-400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url('../assets/fonts/inter-500.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url('../assets/fonts/inter-600.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Pixelify Sans';src:url('../assets/fonts/pixelify-sans-400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Pixelify Sans';src:url('../assets/fonts/pixelify-sans-500.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Pixelify Sans';src:url('../assets/fonts/pixelify-sans-600.ttf') format('truetype');font-weight:600;font-display:swap}
+:root{--white:#fff;--black:#010000;--salvia:#bcc2a9;--purple:#986c9c;--light-gray:#e5e5e5;--heading-font:'Pixelify Sans',sans-serif;--body-font:Inter,sans-serif;--page-width:1440px;--gutter:30px}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;color:var(--black);background:var(--white);font-family:var(--body-font);font-size:16px;line-height:24px}
+img{display:block;max-width:100%;height:auto}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;border:0;background:none}
+button,a[href]{cursor:pointer}
+a{color:inherit;text-decoration:none}
+p{margin:0 0 24px}
+h1,h2{font-family:var(--heading-font);font-weight:600;margin:0;overflow-wrap:break-word}
+h1{font-size:70px;line-height:74px;letter-spacing:2.8px}
+h2{font-size:50px;line-height:52px;font-weight:500;letter-spacing:1px}
+h3{font:500 25px/30px var(--body-font);margin:0 0 20px}
+ol,ul{margin:0;padding-left:25px}
+li{padding-left:3px;margin-bottom:16px}
+hr{border:0;border-top:1px solid #777;margin:30px 0}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid #522d6b;outline-offset:5px}
+/* LAYOUT: flydende grids frem for skalering af hele sider. */
+body>header,body>main,body>footer{max-width:var(--page-width);margin-inline:auto}
+.mobile-only{display:none!important}
+.section-gap{margin-top:90px}
+main>section>h2,main>section>div>h2{margin-inline:var(--gutter)}
+.site-header{position:relative;z-index:5;height:171px}
+.page-index .site-header{height:175px}
+.desktop-header{height:171px;box-shadow:0 10px 39px #0004;border:3px solid var(--light-gray);background:#fff}
+.header-top{height:103px;display:grid;grid-template-columns:87px minmax(0,1fr) 50px;align-items:center;gap:34px;padding-inline:38px 64px}
+.brand-logo{width:87px;height:87px;object-fit:cover}
+.search-decoration{height:60px;border-radius:100px;background:var(--light-gray);opacity:.77;display:flex;gap:16px;align-items:center;padding-inline:25px;font:500 26px/31px var(--body-font);letter-spacing:1.3px}
+.search-decoration img{width:36px;height:34px}
+.menu-trigger{padding:0;width:50px;height:36px}
+.menu-trigger img{width:50px;height:31px}
+.category-nav{display:flex;gap:55px;align-items:center;height:60px;padding-left:90px}
+.nav-item{display:inline-flex;align-items:center;justify-content:center;padding:10px;font:500 20px/30px var(--heading-font);white-space:nowrap}
+.nav-item[href]:hover,.cosmetic:hover,.cosmetic.is-selected{color:var(--purple)}
+.menu-backdrop{position:fixed;inset:0;z-index:10;background:transparent}
+.menu-panel{position:absolute;z-index:11;background:white}
+.desktop-menu{right:0;top:0;width:249px;min-height:1024px;border-radius:20px;padding:82px 20px;display:flex;align-items:center;flex-direction:column;gap:11px}
+.mobile-menu{top:53px;left:0;width:390px;max-width:100%;height:170px;border:1px solid var(--salvia);box-shadow:0 4px 4px #0004;display:grid;grid-template-columns:1fr 1.25fr;grid-template-rows:55px 45px 45px;align-content:start;padding:12px 24px;gap:0 12px}
+
+.mobile-menu .menu-logo img{width:55px;height:55px}
+.mobile-menu .cosmetic{grid-column:1;grid-row:1;justify-content:start}
+.mobile-menu a[href='husinspiration.html']{grid-column:1;grid-row:2;justify-content:start}
+.mobile-menu a[href='materialeguide.html']{grid-column:2;grid-row:1}
+.mobile-menu>span{grid-column:2;justify-content:start}
+.mobile-menu>span:last-child{grid-row:3}
+/* KOMPONENTER: kun dokumenterede links og prototypehandlinger er aktive. */
+.guide-button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 15px;border:1px solid var(--black);border-radius:2px;background:linear-gradient(to bottom,var(--purple) 79.808%,rgb(29 20 30 / .76));color:white;font:500 20px/30px var(--heading-font);white-space:nowrap}
+.guide-button[href]:hover{color:var(--black);background:linear-gradient(var(--purple),#4c304e)}
+.inactive{cursor:default}
+.carousel-cards{display:grid;gap:12px;padding:15px var(--gutter) 30px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.variant-carousel{position:relative;overflow:clip}
+.variant-panel{position:relative}
+.carousel-arrow{position:absolute;top:44%;right:0;font:700 100px/30px 'Anonymous Pro',monospace;padding:0;width:55px;z-index:1}
+.carousel-arrow.previous{left:0;right:auto}
+.house-card{min-width:0}
+.house-image{width:100%;aspect-ratio:336/425;object-fit:cover;border-radius:15px}
+.card-caption{font:500 20px/20px var(--body-font);letter-spacing:1px;text-align:center;margin:8px 0 0;min-height:25px}
+.biome-carousel .carousel-cards{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:33px;padding-bottom:36px;gap:14px}
+.biome-card{position:relative;min-width:0;border:2px solid var(--salvia);box-shadow:0 10px 22px #0009;overflow:clip}
+.biome-card img{width:100%;aspect-ratio:684/337;object-fit:cover}
+.biome-card p{position:absolute;inset:auto 0 0;margin:0;padding:30px 44px;font:500 50px/52px var(--heading-font);color:white;background:linear-gradient(transparent,#000c)}
+.recipes-carousel .carousel-cards{grid-template-columns:repeat(3,minmax(0,1fr));padding-top:20px;padding-bottom:35px}
+.recipe-image{width:100%;aspect-ratio:452/284;object-fit:cover;border-radius:15px}
+.house-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:90px 12px;padding:20px var(--gutter)}
+.guide-cards .mobile-guide,.home-houses>.mobile-only,.house-overview{text-align:center}
+.house-overview h2{text-align:left}
+.house-overview>.guide-button{margin:40px auto 0}
+
+
+
+
+/* KOMPONENTER: originale billeder beskæres inden for deres Figma-felter. */
+.image-frame{position:relative;overflow:hidden;border-radius:20px}
+.image-frame>img{position:absolute;object-fit:fill}
+.image-frame.default-fit>img{object-fit:cover}
+.guide-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:35px var(--gutter) 0}
+.guide-cards{text-align:center}.guide-cards h2{text-align:left}.guide-cards .guide-button{margin-top:30px}
+.recipe-image.image-frame{aspect-ratio:680/342;border-radius:15px}
+.house-grid{gap:35px 12px}
+.house-image{object-fit:cover}
+.prep-title{font-family:var(--body-font);font-size:16px;line-height:20px;letter-spacing:0}
+/* LAYOUT: forside og husinspiration. */
+.home-intro{position:relative;min-height:474px;overflow:hidden;color:white}
+.home-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.home-hero-copy{position:relative;padding:143px 440px 40px 220px;text-align:center}
+.home-hero-copy h1{white-space:nowrap}
+.intro-copy{font:500 25px/30px var(--body-font);margin:22px auto 0;letter-spacing:.5px;max-width:694px}
+.hero-logo-link{position:absolute;right:-16px;top:36px;width:426px}
+.hero-logo{width:100%;height:auto;object-fit:contain}
+.beginner{position:relative;margin-top:35px;min-height:810px;background:black;color:white;text-align:center;overflow:hidden}
+.beginner-background{position:absolute;inset:0}
+.beginner-background img{position:absolute;width:144%;height:166.27%;max-width:none;object-fit:fill;left:-19.42%;top:-44.07%}
+.beginner-copy{position:relative;padding:486px 30px 40px}
+.beginner-copy p{font:500 25px/37.5px var(--body-font);max-width:1000px;margin:0 auto}
+.beginner-copy p+p{margin-top:25px}.beginner .guide-button{margin-top:70px}
+.biomes{margin-top:70px}.biomes .variant-carousel{margin-top:0}
+.home-houses{margin-top:115px}.page-index .guide-cards{margin-top:110px}
+.inspiration-hero{position:relative;height:472px;text-align:center;color:white;overflow:hidden}
+.inspiration-background{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-copy{position:relative;padding:200px 30px 25px}
+.hero-copy p{font:500 25px/38px var(--body-font);max-width:1166px;margin:29px auto 24px}
+.page-husinspiration .biomes{margin-top:40px}
+.difficulty-section{margin-top:35px}.difficulty-desktop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:28px var(--gutter) 0}
+.popular-houses{margin-top:120px}.house-overview{margin-top:88px;text-align:center}.house-overview h2{text-align:left}.house-overview>.guide-button{margin-top:40px}
+/* LAYOUT: byggeguide. */
+.building-hero{width:100%;aspect-ratio:1435/798;object-fit:cover}
+.building-intro{padding:45px 36px 52px}
+.building-intro h1{margin:0}.building-intro-grid{display:grid;grid-template-columns:minmax(0,580px) minmax(0,568px);gap:110px;align-items:start}
+.building-intro-copy p{margin:0 0 24px}.building-intro-copy ul{list-style:none;padding:0}.building-intro-copy li{margin:0;padding:0}.building-intro-copy li::before{content:'• '}
+.material-list-image{width:100%;height:auto;aspect-ratio:1174/586;object-fit:contain}
+.initial-materials{padding-top:60px}.initial-materials .nav-item{justify-content:start}
+.building-intro-actions{margin:45px 0 0 57px}
+.building-steps{padding-inline:var(--gutter)}
+.building-step{border-top:1px solid #ccc;display:grid;grid-template-columns:minmax(0,356px) minmax(0,684px);gap:120px;justify-content:center;align-items:start;padding:65px 0;min-height:690px}
+.step-copy{padding-top:45px}.step-copy h2{margin-bottom:29px}.step-copy h3{margin-bottom:28px}.step-copy ol{line-height:24px}
+.step-images{display:grid;gap:10px}.step-image{width:100%;border-radius:20px}
+.inspiration-note{margin-top:190px;font-size:25px;line-height:30px}
+.building-gallery{border-top:1px solid #ccc;padding:80px var(--gutter) 0}
+.building-gallery>img{width:100%;height:auto;object-fit:cover}.gallery-pair{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}.gallery-pair img{width:100%;height:100%;object-fit:cover}
+.video-section{margin-top:100px;padding:78px 76px 77px 131px;background:var(--salvia);display:grid;grid-template-columns:minmax(0,363px) minmax(0,790px);gap:80px;align-items:center}
+.video-copy h2{font-size:50px;line-height:52px;margin:0}.video-copy h3{margin:20px 0}.video-copy p{margin:0}
+.video-link{position:relative;display:block}.video-thumbnail{width:100%;aspect-ratio:790/434;border:2px solid black;border-radius:20px;object-fit:cover}
+.video-play-symbol{position:absolute;left:40%;top:30%;width:20%;text-align:center;color:white;font-size:65px;line-height:1.5;text-shadow:0 1px 5px #000}
+.materials-section{margin:66px var(--gutter) 0;border-top:1px solid #ccc;padding-top:85px}
+.materials-section h2{margin:0 0 45px 84px}.materials-grid{display:grid;grid-template-columns:minmax(0,642px) minmax(0,683px);gap:53px}
+.material-name-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 39px}.material-name-grid .nav-item{font-size:20px;line-height:30px;padding:10px 0}.material-name-grid .nav-item:last-child{grid-column:2}
+.page-byggeguide .guide-cards{margin-top:90px}
+/* LAYOUT: materialeguide. */
+.crafting-intro{position:relative;background:var(--salvia);min-height:444px;padding:99px 26px 60px}
+.crafting-intro>div{max-width:591px}.crafting-intro h1{font-size:70px;line-height:74px}.crafting-intro p{font:500 25px/37.5px var(--body-font);letter-spacing:.5px;margin:19px 0 0}
+.crafting-intro .crafting-block{position:absolute;top:121px;right:47px;width:772px;height:715px;object-fit:contain;pointer-events:none}
+.crafting-recipe{min-height:545px;padding:57px 0 0 134px}.crafting-instructions{max-width:402px}
+.crafting-instructions h2{font:500 25px/30px var(--body-font);letter-spacing:.5px;margin:0 0 26px}
+.crafting-instructions li{margin-bottom:24px}.crafting-instructions hr{margin:28px 0}
+.crafting-fields{display:grid;grid-template-columns:minmax(0,637px) minmax(0,562px);gap:39px;margin:130px 93px 0 109px;align-items:center;text-align:center}
+.crafting-fields-image{width:100%;aspect-ratio:637/566;object-fit:contain}
+.crafting-fields h3{font-size:25px;margin:25px 0 12px}.crafting-fields h3:first-child{margin-top:0}.crafting-fields p{margin:0 0 24px}
+.inventory-section{text-align:center;padding:0 49px}.inventory-image{width:100%;height:auto;aspect-ratio:1354/880;object-fit:contain}
+.inventory-section h2{margin:34px 0}.inventory-section p{font:500 25px/37.5px var(--body-font);letter-spacing:.5px;max-width:1035px;margin:0 auto 30px}
+.crafting-explanation{max-width:804px;margin:91px auto 0;text-align:center}.crafting-explanation h2{margin:0 0 32px}.crafting-explanation h2:not(:first-child){margin-top:50px}.crafting-explanation p{margin:0 0 24px}
+.crafting-close.standalone{text-align:center;margin:130px auto 0;max-width:1093px;font:500 25px/37.5px var(--body-font)}
+.first-project{margin-top:80px}
+/* LAYOUT: footer; den aktuelle Figma-version har ingen sociale ikoner. */
+.site-footer{background:var(--salvia);margin-top:140px}
+.footer-desktop{display:grid;grid-template-columns:336px minmax(0,400px) minmax(0,1fr);gap:16px;min-height:340px;align-items:center}
+.footer-logo{width:336px;height:336px;object-fit:contain}.footer-brand{text-align:center}
+.footer-name{font:600 70px/74px var(--heading-font);letter-spacing:2.8px;margin:0 0 5px}.footer-description{font:500 20px/30px var(--heading-font);letter-spacing:1px;margin:0}
+.footer-heading{font:500 50px/52px var(--heading-font);text-align:center;margin:0 0 19px}.footer-explore nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 4px}
+.copyright{font-size:16px;line-height:24px;text-align:center;margin:20px 0 0;letter-spacing:0}
+.page-husinspiration .site-footer{margin-top:200px}.page-materialeguide .site-footer{margin-top:210px}
+
+/* Billedfelternes beskæring, aflæst fra Figma. */
+.crop-1{aspect-ratio:336/425}.crop-1>img{width:268.19%;height:137.71%;left:-74.33%;top:-2.96%;max-width:none}
+.crop-2{aspect-ratio:336/425}.crop-2>img{width:288.56%;height:148.17%;left:-80.34%;top:-3.9%;max-width:none}
+.crop-3{aspect-ratio:336/425}.crop-3>img{width:185.94%;height:100%;left:-42.92%;top:0%;max-width:none}
+.crop-4{aspect-ratio:336/425}.crop-4>img{width:194.76%;height:100%;left:-61.42%;top:-0.1%;max-width:none}
+.crop-5{aspect-ratio:336/425}.crop-5>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-6{aspect-ratio:336/425}.crop-6>img{width:250.5%;height:128.62%;left:-109.41%;top:-9.22%;max-width:none}
+.crop-7{aspect-ratio:336/425}.crop-7>img{width:298.36%;height:153.2%;left:-107.75%;top:-20.24%;max-width:none}
+.crop-8{aspect-ratio:336/425}.crop-8>img{width:251.12%;height:128.94%;left:-60.33%;top:-6.69%;max-width:none}
+.crop-9{aspect-ratio:167/215}.crop-9>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-10{aspect-ratio:167/215}.crop-10>img{width:258.81%;height:120.16%;left:-79.08%;top:-8.17%;max-width:none}
+.crop-11{aspect-ratio:167/215}.crop-11>img{width:256.02%;height:118.87%;left:-93.75%;top:-9.48%;max-width:none}
+.crop-12{aspect-ratio:167/215}.crop-12>img{width:295.19%;height:143.55%;left:-59.86%;top:-11.94%;max-width:none}
+.crop-13{aspect-ratio:167/215}.crop-13>img{width:319.46%;height:128.46%;left:-149.54%;top:-13.94%;max-width:none}
+.crop-14{aspect-ratio:167/215}.crop-14>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-15{aspect-ratio:167/215}.crop-15>img{width:282.18%;height:131.01%;left:-77.04%;top:-18.86%;max-width:none}
+.crop-16{aspect-ratio:167/215}.crop-16>img{width:252.28%;height:122.69%;left:-82.37%;top:-22.69%;max-width:none}
+.crop-17{aspect-ratio:684/337}.crop-17>img{width:100%;height:131.82%;left:0.04%;top:-15.87%;max-width:none}
+.crop-18{aspect-ratio:684/337}.crop-18>img{width:169.86%;height:223.91%;left:0%;top:-65.03%;max-width:none}
+.crop-19{aspect-ratio:684/337}.crop-19>img{width:169.86%;height:223.91%;left:-46.05%;top:-33.32%;max-width:none}
+.crop-20{aspect-ratio:684/337}.crop-20>img{width:374.63%;height:493.84%;left:-137.31%;top:-207.05%;max-width:none}
+.crop-21{aspect-ratio:684/337}.crop-21>img{width:100%;height:131.82%;left:0.04%;top:-15.87%;max-width:none}
+.crop-22{aspect-ratio:684/337}.crop-22>img{width:169.86%;height:223.91%;left:0%;top:-65.03%;max-width:none}
+.crop-23{aspect-ratio:684/337}.crop-23>img{width:169.86%;height:223.91%;left:-46.05%;top:-33.32%;max-width:none}
+.crop-24{aspect-ratio:684/337}.crop-24>img{width:374.63%;height:493.84%;left:-137.31%;top:-207.05%;max-width:none}
+.crop-25{aspect-ratio:684/337}.crop-25>img{width:100%;height:131.82%;left:0.04%;top:-15.87%;max-width:none}
+.crop-26{aspect-ratio:684/337}.crop-26>img{width:169.86%;height:223.91%;left:0%;top:-65.03%;max-width:none}
+.crop-27{aspect-ratio:684/337}.crop-27>img{width:169.86%;height:223.91%;left:-46.05%;top:-33.32%;max-width:none}
+.crop-28{aspect-ratio:684/337}.crop-28>img{width:374.63%;height:493.84%;left:-137.31%;top:-207.05%;max-width:none}
+.crop-29{aspect-ratio:684/337}.crop-29>img{width:100%;height:131.82%;left:0.04%;top:-15.87%;max-width:none}
+.crop-30{aspect-ratio:684/337}.crop-30>img{width:169.86%;height:223.91%;left:0%;top:-65.03%;max-width:none}
+.crop-31{aspect-ratio:684/337}.crop-31>img{width:169.86%;height:223.91%;left:-46.05%;top:-33.32%;max-width:none}
+.crop-32{aspect-ratio:684/337}.crop-32>img{width:374.63%;height:493.84%;left:-137.31%;top:-207.05%;max-width:none}
+.crop-33{aspect-ratio:680/342}.crop-33>img{width:471.78%;height:609.24%;left:-312.42%;top:-149.62%;max-width:none}
+.crop-34{aspect-ratio:348/206}.crop-34>img{width:271.69%;height:407.39%;left:-131.9%;top:-60.85%;max-width:none}
+.crop-35{aspect-ratio:680/342}.crop-35>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-36{aspect-ratio:680/342}.crop-36>img{width:471.78%;height:609.24%;left:-312.42%;top:-149.62%;max-width:none}
+.crop-37{aspect-ratio:348/206}.crop-37>img{width:271.69%;height:407.39%;left:-131.9%;top:-60.85%;max-width:none}
+.crop-38{aspect-ratio:680/342}.crop-38>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-39{aspect-ratio:680/342}.crop-39>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-40{aspect-ratio:680/342}.crop-40>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-41{aspect-ratio:336/425}.crop-41>img{width:268.19%;height:137.71%;left:-74.33%;top:-2.96%;max-width:none}
+.crop-42{aspect-ratio:336/425}.crop-42>img{width:288.56%;height:148.17%;left:-80.34%;top:-3.9%;max-width:none}
+.crop-43{aspect-ratio:336/425}.crop-43>img{width:185.94%;height:100%;left:-42.92%;top:0%;max-width:none}
+.crop-44{aspect-ratio:336/425}.crop-44>img{width:194.76%;height:100%;left:-61.42%;top:-0.1%;max-width:none}
+.crop-45{aspect-ratio:336/425}.crop-45>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-46{aspect-ratio:336/425}.crop-46>img{width:250.5%;height:128.62%;left:-109.41%;top:-9.22%;max-width:none}
+.crop-47{aspect-ratio:336/425}.crop-47>img{width:298.36%;height:153.2%;left:-107.75%;top:-20.24%;max-width:none}
+.crop-48{aspect-ratio:336/425}.crop-48>img{width:251.12%;height:128.94%;left:-60.33%;top:-6.69%;max-width:none}
+.crop-49{aspect-ratio:167/215}.crop-49>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-50{aspect-ratio:167/215}.crop-50>img{width:258.81%;height:120.16%;left:-79.08%;top:-8.17%;max-width:none}
+.crop-51{aspect-ratio:167/215}.crop-51>img{width:256.02%;height:118.87%;left:-93.75%;top:-9.48%;max-width:none}
+.crop-52{aspect-ratio:167/215}.crop-52>img{width:295.19%;height:143.55%;left:-59.86%;top:-11.94%;max-width:none}
+.crop-53{aspect-ratio:167/215}.crop-53>img{width:319.46%;height:128.46%;left:-149.54%;top:-13.94%;max-width:none}
+.crop-54{aspect-ratio:167/215}.crop-54>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-55{aspect-ratio:167/215}.crop-55>img{width:282.18%;height:131.01%;left:-77.04%;top:-18.86%;max-width:none}
+.crop-56{aspect-ratio:167/215}.crop-56>img{width:252.28%;height:122.69%;left:-82.37%;top:-22.69%;max-width:none}
+.crop-57{aspect-ratio:684/337}.crop-57>img{width:100%;height:131.82%;left:0.04%;top:-15.87%;max-width:none}
+.crop-58{aspect-ratio:684/337}.crop-58>img{width:169.86%;height:223.91%;left:0%;top:-65.03%;max-width:none}
+.crop-59{aspect-ratio:684/337}.crop-59>img{width:169.86%;height:223.91%;left:-46.05%;top:-33.32%;max-width:none}
+.crop-60{aspect-ratio:684/337}.crop-60>img{width:374.63%;height:493.84%;left:-137.31%;top:-207.05%;max-width:none}
+.crop-61{aspect-ratio:684/337}.crop-61>img{width:100%;height:131.82%;left:0.04%;top:-15.87%;max-width:none}
+.crop-62{aspect-ratio:684/337}.crop-62>img{width:169.86%;height:223.91%;left:0%;top:-65.03%;max-width:none}
+.crop-63{aspect-ratio:684/337}.crop-63>img{width:169.86%;height:223.91%;left:-46.05%;top:-33.32%;max-width:none}
+.crop-64{aspect-ratio:684/337}.crop-64>img{width:374.63%;height:493.84%;left:-137.31%;top:-207.05%;max-width:none}
+.crop-65{aspect-ratio:684/337}.crop-65>img{width:100%;height:131.82%;left:0%;top:-15.87%;max-width:none}
+.crop-66{aspect-ratio:684/337}.crop-66>img{width:100%;height:131.82%;left:0%;top:-15.87%;max-width:none}
+.crop-67{aspect-ratio:336/425}.crop-67>img{width:268.19%;height:137.71%;left:-74.33%;top:-2.96%;max-width:none}
+.crop-68{aspect-ratio:336/425}.crop-68>img{width:288.56%;height:148.17%;left:-80.34%;top:-3.9%;max-width:none}
+.crop-69{aspect-ratio:336/425}.crop-69>img{width:185.94%;height:100%;left:-42.92%;top:0%;max-width:none}
+.crop-70{aspect-ratio:336/425}.crop-70>img{width:194.76%;height:100%;left:-61.42%;top:-0.1%;max-width:none}
+.crop-71{aspect-ratio:336/425}.crop-71>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-72{aspect-ratio:336/425}.crop-72>img{width:250.5%;height:128.62%;left:-109.41%;top:-9.22%;max-width:none}
+.crop-73{aspect-ratio:336/425}.crop-73>img{width:298.36%;height:153.2%;left:-107.75%;top:-20.24%;max-width:none}
+.crop-74{aspect-ratio:336/425}.crop-74>img{width:251.12%;height:128.94%;left:-60.33%;top:-6.69%;max-width:none}
+.crop-75{aspect-ratio:336/425}.crop-75>img{width:268.19%;height:137.71%;left:-74.33%;top:-2.96%;max-width:none}
+.crop-76{aspect-ratio:336/425}.crop-76>img{width:288.56%;height:148.17%;left:-80.34%;top:-3.9%;max-width:none}
+.crop-77{aspect-ratio:336/425}.crop-77>img{width:185.94%;height:100%;left:-42.92%;top:0%;max-width:none}
+.crop-78{aspect-ratio:336/425}.crop-78>img{width:194.76%;height:100%;left:-61.42%;top:-0.1%;max-width:none}
+.crop-79{aspect-ratio:336/425}.crop-79>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-80{aspect-ratio:336/425}.crop-80>img{width:250.5%;height:128.62%;left:-109.41%;top:-9.22%;max-width:none}
+.crop-81{aspect-ratio:336/425}.crop-81>img{width:298.36%;height:153.2%;left:-107.75%;top:-20.24%;max-width:none}
+.crop-82{aspect-ratio:336/425}.crop-82>img{width:251.12%;height:128.94%;left:-60.33%;top:-6.69%;max-width:none}
+.crop-83{aspect-ratio:167/215}.crop-83>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-84{aspect-ratio:167/215}.crop-84>img{width:258.81%;height:120.16%;left:-79.08%;top:-8.17%;max-width:none}
+.crop-85{aspect-ratio:167/215}.crop-85>img{width:256.02%;height:118.87%;left:-93.75%;top:-9.48%;max-width:none}
+.crop-86{aspect-ratio:167/215}.crop-86>img{width:295.19%;height:143.55%;left:-59.86%;top:-11.94%;max-width:none}
+.crop-87{aspect-ratio:167/215}.crop-87>img{width:319.46%;height:128.46%;left:-149.54%;top:-13.94%;max-width:none}
+.crop-88{aspect-ratio:167/215}.crop-88>img{width:100%;height:100%;left:0%;top:0%;max-width:none}
+.crop-89{aspect-ratio:167/215}.crop-89>img{width:282.18%;height:131.01%;left:-77.04%;top:-18.86%;max-width:none}
+.crop-90{aspect-ratio:167/215}.crop-90>img{width:252.28%;height:122.69%;left:-82.37%;top:-22.69%;max-width:none}
+.crop-91{aspect-ratio:684/560}.crop-91>img{width:191.79%;height:152.14%;left:-44.27%;top:-29.76%;max-width:none}
+.crop-92{aspect-ratio:684/560}.crop-92>img{width:213.9%;height:169.68%;left:-46.97%;top:-22.37%;max-width:none}
+.crop-93{aspect-ratio:684/392}.crop-93>img{width:141.17%;height:171.35%;left:-20.62%;top:-29.41%;max-width:none}
+.crop-94{aspect-ratio:684/392}.crop-94>img{width:131.17%;height:159.2%;left:-21.36%;top:-29.41%;max-width:none}
+.crop-95{aspect-ratio:684/392}.crop-95>img{width:173.12%;height:210.13%;left:-36.54%;top:-59.51%;max-width:none}
+.crop-96{aspect-ratio:684/560}.crop-96>img{width:167.12%;height:132.58%;left:-28.94%;top:-26.01%;max-width:none}
+.crop-97{aspect-ratio:684/342}.crop-97>img{width:159.62%;height:207.34%;left:-35.06%;top:-44.75%;max-width:none}
+.crop-98{aspect-ratio:684/342}.crop-98>img{width:159.62%;height:207.34%;left:-38.55%;top:-56.8%;max-width:none}
+.crop-99{aspect-ratio:684/412}.crop-99>img{width:115.59%;height:124.63%;left:-7.77%;top:-12.31%;max-width:none}
+.crop-100{aspect-ratio:684/412}.crop-100>img{width:107.82%;height:116.25%;left:-3.96%;top:-12.31%;max-width:none}
+.crop-101{aspect-ratio:684/560}.crop-101>img{width:249.49%;height:197.92%;left:-74.71%;top:-37.69%;max-width:none}
+.crop-102{aspect-ratio:684/560}.crop-102>img{width:141.88%;height:112.55%;left:-29.27%;top:-12.58%;max-width:none}
+.crop-103{aspect-ratio:680/342}.crop-103>img{width:471.78%;height:609.24%;left:-312.42%;top:-149.62%;max-width:none}
+.crop-104{aspect-ratio:348/206}.crop-104>img{width:271.69%;height:407.39%;left:-131.9%;top:-60.85%;max-width:none}
+.crop-105{aspect-ratio:680/342}.crop-105>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-106{aspect-ratio:680/342}.crop-106>img{width:471.78%;height:609.24%;left:-312.42%;top:-149.62%;max-width:none}
+.crop-107{aspect-ratio:348/206}.crop-107>img{width:271.69%;height:407.39%;left:-131.9%;top:-60.85%;max-width:none}
+.crop-108{aspect-ratio:680/342}.crop-108>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-109{aspect-ratio:680/342}.crop-109>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+.crop-110{aspect-ratio:680/342}.crop-110>img{width:306.3%;height:395.54%;left:-163.14%;top:-92.52%;max-width:none}
+
+/* RESPONSIVE TILPASNINGER: mobilframe 390 px og fleksible mellembredder. */
+@media(min-width:761px) and (max-width:1200px){
+ h1{font-size:clamp(42px,4.86vw,70px);line-height:1.06}h2{font-size:clamp(30px,3.47vw,50px);line-height:1.04}
+ .category-nav{gap:25px;padding-left:45px}.header-top{gap:20px;padding-inline:25px}.card-caption{font-size:15px;letter-spacing:.5px}.biome-card p{font-size:38px;padding:20px}
+ .home-hero-copy{padding:120px 34% 40px 5%}.home-hero-copy h1{white-space:normal}.hero-logo-link{width:30%;right:2%;top:90px}.intro-copy{font-size:21px}
+ .hero-copy{padding-top:140px}.beginner{min-height:650px}.beginner-copy{padding-top:380px}.beginner .guide-button{margin-top:35px}
+ .building-intro h1{font-size:50px}.building-intro-grid{gap:45px;grid-template-columns:1fr 1fr}.building-step{grid-template-columns:34% 56%;gap:6%;min-height:560px}
+ .video-section{grid-template-columns:32% 1fr;gap:5%;padding:55px 45px}.video-copy h2{font-size:38px;line-height:40px}
+ .materials-grid{grid-template-columns:1fr 1fr;gap:40px}.material-name-grid{gap:15px 12px}.material-name-grid .nav-item{font-size:12px}
+ .crafting-intro>div{width:45%}.crafting-intro h1{font-size:44px;line-height:48px}.crafting-intro .crafting-block{width:50%;height:auto;top:150px;right:20px}
+ .crafting-intro p{font-size:21px}.crafting-recipe{padding-left:45px}.crafting-instructions{width:45%}.crafting-fields{margin-inline:45px;gap:30px;grid-template-columns:1fr 1fr}.crafting-explanation{margin-inline:70px}.crafting-close.standalone{margin-inline:50px}
+ .footer-desktop{grid-template-columns:23% 29% 44%;gap:2%}.footer-logo{width:100%;height:auto}.footer-name{font-size:45px;line-height:48px}.footer-heading{font-size:32px;line-height:36px}.footer-description{font-size:16px;line-height:24px}.footer-explore .nav-item{font-size:clamp(11px,1.25vw,15px);padding:5px}
+}
+@media(max-width:760px){
+ :root{--gutter:20px}.desktop-only{display:none!important}.mobile-only{display:block!important}
+ h1{font-size:36px;line-height:40px;letter-spacing:.36px}h2{font-size:28px;line-height:32px;letter-spacing:.28px}h3{font-size:16px;line-height:20px;margin-bottom:16px}
+ p{margin-bottom:16px}body{line-height:20px}.section-gap{margin-top:50px}
+ .site-header,.page-index .site-header{height:53px}.mobile-header{height:53px;box-shadow:0 4px 4px #0004;display:flex!important;align-items:center;padding:0 17px 0 9px;gap:5px;background:white}
+ .mobile-header .brand-logo{width:55px;height:55px}.mobile-brand{font:500 28px/32px var(--heading-font);letter-spacing:.28px;flex:1;white-space:nowrap}
+ .search-mobile,.mobile-header .menu-trigger{width:35px;height:35px;flex:none}.search-mobile img,.mobile-header .menu-trigger img{width:35px;height:35px;object-fit:contain}
+ .guide-button{min-height:38px;padding:3px 10px;font-size:16px;line-height:30px}
+ .home-intro{min-height:302px;color:black;overflow:hidden}.home-background{height:175px;object-position:center}.home-hero-copy{padding:179px 28px 17px}.home-hero-copy h1{white-space:normal}.intro-copy{margin:0;font:400 13px/16px var(--body-font);letter-spacing:0}
+ .hero-logo-link{width:120px;height:120px;top:30px;left:calc(50% - 60px);right:auto}.hero-logo{height:120px}
+ .beginner{min-height:344px;margin:0;padding-top:3px}.beginner .crafting-block{width:160px;height:148px;object-fit:contain;margin:auto}.beginner-copy{padding:0 40px 11px}.beginner-copy h2{margin:0}.beginner-copy p{font:400 13px/16px var(--body-font);letter-spacing:0}.beginner-copy p+p{margin-top:24px}.beginner .guide-button{margin-top:36px;font-size:14px;line-height:16px;width:226px}
+ .biomes,.page-husinspiration .biomes{margin-top:53px}.biomes h2{margin-left:18px}.biome-window{overflow:clip;width:100%;height:257px;padding-top:0}
+ .biome-strip{display:flex;gap:20px;padding:0 20px 20px 10px;width:max-content}.biome-strip .biome-card{width:340px;flex:none}.biome-strip .biome-image{aspect-ratio:340/220;border-radius:0}.biome-card p{padding:20px 25px;font-size:36px;line-height:40px}
+ .house-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:41px 16px;padding:29px 20px 0}.house-grid.mobile-only{display:grid!important}.house-image{aspect-ratio:167/215;border-radius:15px}.card-caption{font-size:14px;line-height:20px;letter-spacing:.7px;margin-top:7px;min-height:40px}.difficulty{display:block}
+ .project-window{overflow:clip;width:100%;padding:21px 20px 20px 17px}.project-strip{display:flex;gap:16px;width:max-content}.project-strip .house-card{width:167px;flex:none}.project-strip .house-image{aspect-ratio:167/234}.project-strip .card-caption{min-height:20px}
+ /* Vandret rulning er eksplicit HORIZONTAL på disse Figma-frames. */
+ .project-window,.biome-window{overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.project-window::-webkit-scrollbar,.biome-window::-webkit-scrollbar{display:none}
+ .home-houses{margin-top:25px;text-align:center}.home-houses h2{text-align:left;margin-inline:18px}.home-houses .guide-button{margin:0;min-width:138px}
+ .page-index .guide-cards{margin-top:40px}.page-index .guide-cards+.guide-cards{margin-top:31px}.mobile-guide{padding:0 22px}.mobile-guide h2{font-family:var(--body-font);font-size:16px;line-height:20px;font-weight:500;letter-spacing:0;margin:0 0 20px!important;text-align:center}
+ .recipe-image.image-frame{aspect-ratio:348/206}.recipe-card .card-caption{min-height:20px;margin-top:3px}.mobile-guide .guide-button{margin-top:14px;min-width:138px}
+ .inspiration-hero{height:127px}.hero-copy{padding:49px 24px 0}.hero-copy h1{font-size:28px;line-height:32px;letter-spacing:.28px;margin:0}
+ .inspiration-mobile-copy{margin:9px 46px 0;text-align:center;font:400 13px/16px var(--body-font)}.page-husinspiration .biomes{margin-top:29px}.difficulty-section{margin-top:27px}.difficulty-section h2{text-align:center;margin:0}.difficulty-mobile{display:flex!important;gap:45px;justify-content:center;margin-top:14px}.difficulty-mobile .guide-button{min-width:138px}
+ .house-overview{margin-top:59px}.house-overview h2{margin-inline:19px}.house-overview .guide-button{margin-top:41px;min-width:138px}
+ .building-hero{aspect-ratio:391/218}.building-intro{padding:21px 24px 14px}.building-intro h1{font-size:36px;line-height:40px;text-align:center;margin:0 0 8px}
+ .building-intro-grid{display:flex;flex-direction:column;gap:16px}.building-intro-copy{display:contents}.building-intro-copy p.mobile-only{order:0}.building-intro-copy p:not([class]){order:1}.initial-materials{order:2;width:100%;padding:0}.building-intro-copy .prep-title{order:3;margin:0}.building-intro-copy ul{order:4;width:100%}
+ .building-intro-copy p,.building-intro-copy ul,.step-copy ol,.step-copy>p{font-size:13px;line-height:16px}.building-intro-actions{margin:14px 0 0}.building-intro-actions .guide-button{font-size:12px;line-height:18px;padding:10px 7px;width:167px;white-space:normal;text-align:center}
+ .building-steps{padding-inline:20px}.building-step{display:flex;flex-direction:column;gap:18px;align-items:stretch;padding:21px 0 26px;min-height:0}.step-images{order:-1;gap:13px}.step-image.image-frame{aspect-ratio:350/220}.step-copy{padding:0}.step-copy h2{margin:0}.step-copy h3{margin:0 0 32px}.step-copy ol{line-height:16px}.step-copy li{margin-bottom:16px}.step-copy li:last-child{margin-bottom:0}.step-copy .inspiration-note{margin:36px 0 0;font:500 16px/20px var(--body-font)}
+ .building-gallery{padding:20px var(--gutter) 0}.video-section{margin-top:18px;padding:27px 35px 39px;display:flex;flex-direction:column;gap:27px}.video-link{order:-1;width:243px;max-width:100%}.video-thumbnail{aspect-ratio:243/134}.video-play-symbol{font-size:35px;top:25%}.video-copy h2{font-size:28px;line-height:32px;text-align:center}.video-copy h3{font-size:16px;line-height:20px;margin:0;text-align:center}.video-copy p{font-size:13px;line-height:16px}
+ .materials-section{margin:58px 20px 0;padding-top:0;border:0}.materials-section h2{text-align:center;font-size:28px;line-height:32px;margin:0 0 25px}.materials-grid{display:flex;flex-direction:column;gap:35px;padding-top:310px}.material-name-grid{display:none}.page-byggeguide .guide-cards{margin-top:61px}
+ .crafting-intro{min-height:467px;padding:35px 26px 0;text-align:center}.crafting-intro>div{max-width:none}.crafting-intro h1{font-size:28px;line-height:32px;letter-spacing:.28px}.crafting-intro p{font-size:16px;line-height:20px;letter-spacing:0;margin-top:32px}.crafting-intro .crafting-block{position:relative;top:auto;right:auto;width:359px;max-width:100%;height:333px;margin:0 auto -75px}
+ .crafting-recipe{min-height:0;padding:75px 26px 0}.crafting-instructions{max-width:none}.crafting-instructions h2{font-size:16px;line-height:20px;margin:0 0 16px}.crafting-instructions li{margin:0;line-height:16px}.crafting-instructions ol{font-size:13px;line-height:16px}.crafting-instructions hr{margin:26px 0}
+ .crafting-fields{display:block;margin:0 20px}.crafting-fields-image{width:100%;aspect-ratio:396/352;object-fit:contain}.crafting-fields h3{font-size:16px;line-height:20px;margin:26px 0 12px}.crafting-fields h3:first-child{margin-top:16px}.crafting-fields p{font-size:13px;line-height:16px;margin-bottom:16px}
+ .inventory-section{padding:0 30px}.inventory-image{aspect-ratio:336/218}.inventory-section h2{margin:0 0 24px}.inventory-section p{font-size:13px;line-height:16px;letter-spacing:0;margin-bottom:16px}.crafting-explanation{margin:0 20px;max-width:none}.crafting-explanation h2{font-size:28px;line-height:32px;margin:0 0 24px}.crafting-explanation h2:not(:first-child){margin-top:35px}.crafting-explanation p{font-size:13px;line-height:16px;margin-bottom:16px}
+ .crafting-close.standalone{margin:24px 20px;font:400 13px/16px var(--body-font)}.first-project{margin-top:25px}.first-project h2{margin-inline:18px!important}
+ .site-footer{margin-top:112px}.page-husinspiration .site-footer{margin-top:30px}.page-materialeguide .site-footer{margin-top:68px}.page-byggeguide .site-footer{margin-top:93px}
+ .footer-mobile{min-height:906px;padding-top:0;text-align:center}.footer-logo{width:255px;height:255px;margin:-7px auto -20px}.footer-name{font-size:36px;line-height:40px;letter-spacing:.36px;margin:0 0 6px}.footer-description{font-family:var(--body-font);font-size:16px;line-height:20px;letter-spacing:0;max-width:329px;margin:0 auto}.footer-heading{font-size:28px;line-height:32px;margin:52px 0 20px}.footer-mobile nav{display:flex;flex-direction:column;align-items:center;gap:4px}.footer-mobile .nav-item{font-size:20px;line-height:30px}
+}
+@media(max-width:370px){.mobile-brand{font-size:24px}.mobile-header{padding-right:8px;gap:3px}.house-grid{gap:30px 12px;padding-inline:15px}.difficulty-mobile{gap:20px}.difficulty-mobile .guide-button{min-width:120px}.hero-copy h1{font-size:24px}.beginner-copy{padding-inline:25px}.home-hero-copy{padding-inline:18px}}
+
+/* Rettelser efter den aktuelle Figma-reference. */
+.biome-card,.biome-image.image-frame{border-radius:0}
+.house-image.image-frame{border-radius:15px}
+.recipe-image.image-frame{border-radius:15px}
+.step-image.image-frame{border-radius:0}
+.carousel-arrow{color:#fff;text-shadow:0 2px 5px #0009;font-family:'Pixelify Sans',sans-serif;font-size:50px;line-height:1;width:55px;height:55px;display:grid;place-items:center}
+.footer-mobile .copyright{margin:60px 20px 20px;font:400 12px/18px var(--body-font)}
+@media(max-width:760px){
+ .biome-strip .biome-card{width:min(350px,calc(100vw - 40px))}
+ .materials-grid{padding-top:0}
+ .material-name-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .material-name-grid .nav-item{font:400 12px/16px var(--body-font);white-space:normal;padding:8px 2px;overflow-wrap:anywhere}
+ .inspiration-background.mobile-only{opacity:.5;object-position:center}
+ .home-background.mobile-only{object-position:center}
+ .biome-card p{font-size:28px;line-height:32px}
+}
+
+/* Mobilens udstyrskort bruger Figma-billedets egen beskæring. */
+@media(max-width:760px){.crop-40>img,.crop-110>img{width:365.45%;height:400.76%;left:-196.63%;top:-93.81%;max-width:none}}
