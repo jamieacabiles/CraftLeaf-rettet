@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CraftLeaf | CraftLeaf</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/prototype.js" defer>
+</script>
+</head>
+<body class="page-index">
+<header class="site-header">
+      <div class="desktop-header desktop-only">
+<div class="header-top">
+<a href="#home-title" aria-label="CraftLeaf forside">
+<img class="brand-logo" src="assets/images/Logo ai genereret chatgpt.png" width="1272" height="1237" alt="CraftLeaf-logo">
+</a>
+<div class="search-decoration">
+<img src="assets/icons/search.svg" alt="" aria-hidden="true">
+<span>Søgning</span>
+</div>
+<button class="menu-trigger" type="button" data-open-menu="desktop-menu" aria-controls="desktop-menu" aria-expanded="false" aria-label="Åbn menu">
+<img src="assets/icons/menu-desktop.svg" alt="" aria-hidden="true">
+</button>
+</div>
+<nav class="category-nav" aria-label="Kategorier">
+<button type="button" class="nav-item cosmetic" data-cosmetic>BIOME</button>
+<a class="nav-item" href="husinspiration.html">HUSE</a>
+<a class="nav-item" href="materialeguide.html">CRAFTING TABLE</a>
+<button type="button" class="nav-item cosmetic" data-cosmetic>UDSTYR</button>
+<button type="button" class="nav-item cosmetic" data-cosmetic>MATERIALE</button>
+</nav>
+</div>
+      <div class="mobile-header mobile-only">
+<img class="brand-logo" src="assets/images/Logo ai genereret chatgpt.png" width="1272" height="1237" alt="CraftLeaf-logo">
+<span class="mobile-brand">CRAFTLEAF</span>
+<span class="search-mobile" aria-hidden="true">
+<img class="" src="assets/images/søgelogo - ai-genereret-chatgpt.png" width="1254" height="1254" alt="">
+</span>
+<button class="menu-trigger" type="button" data-open-menu="mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Åbn menu">
+<img class="" src="assets/images/menu til telefon.png" width="1254" height="1254" alt="">
+</button>
+</div>
+      <div class="menu-backdrop" data-menu-backdrop hidden>
+</div>
+<nav class="desktop-menu menu-panel" id="desktop-menu" aria-label="Desktopmenu" hidden>
+<button type="button" class="nav-item cosmetic" data-cosmetic>BIOME</button>
+<a class="nav-item" href="husinspiration.html">HUSE</a>
+<a class="nav-item" href="materialeguide.html">CRAFTING TABLE</a>
+<button type="button" class="nav-item cosmetic" data-cosmetic>MATERIALE</button>
+<button type="button" class="nav-item cosmetic" data-cosmetic>UDSTYR</button>
+</nav>
+<nav class="mobile-menu menu-panel" id="mobile-menu" aria-label="Mobilmenu" hidden>
+<button type="button" class="nav-item cosmetic" data-cosmetic>BIOME</button>
+<a class="nav-item" href="husinspiration.html">HUSE</a>
+<a class="nav-item" href="materialeguide.html">CRAFTING TABLE</a>
+<span class="nav-item">MATERIALE</span>
+<span class="nav-item">UDSTYR</span>
+</nav>
+    </header>
+<main>
+<section class="home-intro" id="home-intro">
+<img class="home-background desktop-only" src="assets/images/baggrund 2.png" width="1440" height="474" alt="">
+<img class="home-background mobile-only" src="assets/images/baggrund mobil forside.png" width="407" height="175" alt="">
+<div class="home-hero-copy">
+<h1 id="home-title">CRAFTLEAF</h1>
+<p class="intro-copy" id="home-description">Find inspiration til dit næste Minecraft-hus. CraftLeaf guider dig fra idé til færdigt byggeri med visuelle byggetrin og hjælp til materialer og udstyr.</p>
+</div>
+<a class="hero-logo-link desktop-only" href="#home-description" aria-label="Gå til introduktionen">
+<img class="hero-logo" src="assets/images/Logo ai genereret chatgpt.png" width="1272" height="1237" alt="CraftLeaf-logo">
+</a>
+<a class="hero-logo-link mobile-only" href="#home-intro" aria-label="Gå til banneret">
+<img class="hero-logo" src="assets/images/Logo ai genereret chatgpt.png" width="1272" height="1237" alt="CraftLeaf-logo">
+</a>
+</section>
+<div class="desktop-only">
+<section class="biomes section-gap">
+<h2 class="desktop-only">VÆLG DIN BIOME</h2>
+<h2 class="mobile-only">VÆLG DIN BIOME</h2>
+<div class="desktop-only">
+<div class="variant-carousel biome-carousel" data-variant-carousel>
+<div class="variant-panel" data-panel="0">
+<div class="carousel-cards">
+<article class="biome-card">
+<div class="image-frame biome-image crop-21">
+<img class="" src="assets/images/BIOME TÆT PÅ VAND.2.png" width="684" height="337" alt="TÆT PÅ HAV">
+</div>
+<p>TÆT PÅ HAV</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-22">
+<img class="" src="assets/images/HUSKORT 7.png" width="684" height="337" alt="EFTERÅR">
+</div>
+<p>EFTERÅR</p>
+</article>
+</div>
+<button type="button" class="carousel-arrow next" data-variant="1" aria-label="Vis næste kort">&gt;</button>
+</div>
+<div class="variant-panel" data-panel="1" hidden>
+<div class="carousel-cards">
+<article class="biome-card">
+<div class="image-frame biome-image crop-23">
+<img class="" src="assets/images/HUSKORT 1.png" width="684" height="337" alt="BJERG">
+</div>
+<p>BJERG</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-24">
+<img class="" src="assets/images/BIOME SNE.png" width="684" height="337" alt="SNE">
+</div>
+<p>SNE</p>
+</article>
+</div>
+<button type="button" class="carousel-arrow previous" data-variant="0" aria-label="Vis forrige kort">&lt;</button>
+</div>
+</div>
+</div>
+<div class="mobile-only">
+<div class="biome-window" role="region" aria-label="Vandret kortvisning" tabindex="0">
+<div class="biome-strip">
+<article class="biome-card">
+<div class="image-frame biome-image crop-17">
+<img class="" src="assets/images/BIOME TÆT PÅ VAND.2.png" width="684" height="337" alt="TÆT PÅ VAND">
+</div>
+<p>TÆT PÅ VAND</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-18">
+<img class="" src="assets/images/HUSKORT 7.png" width="684" height="337" alt="EFTERÅR">
+</div>
+<p>EFTERÅR</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-19">
+<img class="" src="assets/images/HUSKORT 1.png" width="684" height="337" alt="BJERG">
+</div>
+<p>BJERG</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-20">
+<img class="" src="assets/images/BIOME SNE.png" width="684" height="337" alt="SNE">
+</div>
+<p>SNE</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="beginner" id="begynder">
+<div class="desktop-only beginner-background">
+<img class="" src="assets/images/CRAFTING TABLE.png" width="3024" height="1964" alt="Crafting Table i Minecraft">
+</div>
+<img class="crafting-block mobile-only" src="assets/images/CRAFTING TABLE TP.png" width="359" height="333" alt="Crafting Table">
+<div class="beginner-copy">
+<h2>NY I SURVIVAL?</h2>
+<p>En Crafting Table hjælper dig med at lave redskaber og komme i gang med dit første byggeri.</p>
+<p>Se, hvordan du laver og bruger den.</p>
+<a class="guide-button " href="materialeguide.html">LÆR OM CRAFTING TABLE &gt;</a>
+</div>
+</section>
+<div class="mobile-only">
+<section class="biomes section-gap">
+<h2 class="desktop-only">VÆLG DIN BIOME</h2>
+<h2 class="mobile-only">VÆLG DIN BIOME</h2>
+<div class="desktop-only">
+<div class="variant-carousel biome-carousel" data-variant-carousel>
+<div class="variant-panel" data-panel="0">
+<div class="carousel-cards">
+<article class="biome-card">
+<div class="image-frame biome-image crop-29">
+<img class="" src="assets/images/BIOME TÆT PÅ VAND.2.png" width="684" height="337" alt="TÆT PÅ HAV">
+</div>
+<p>TÆT PÅ HAV</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-30">
+<img class="" src="assets/images/HUSKORT 7.png" width="684" height="337" alt="EFTERÅR">
+</div>
+<p>EFTERÅR</p>
+</article>
+</div>
+<button type="button" class="carousel-arrow next" data-variant="1" aria-label="Vis næste kort">&gt;</button>
+</div>
+<div class="variant-panel" data-panel="1" hidden>
+<div class="carousel-cards">
+<article class="biome-card">
+<div class="image-frame biome-image crop-31">
+<img class="" src="assets/images/HUSKORT 1.png" width="684" height="337" alt="BJERG">
+</div>
+<p>BJERG</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-32">
+<img class="" src="assets/images/BIOME SNE.png" width="684" height="337" alt="SNE">
+</div>
+<p>SNE</p>
+</article>
+</div>
+<button type="button" class="carousel-arrow previous" data-variant="0" aria-label="Vis forrige kort">&lt;</button>
+</div>
+</div>
+</div>
+<div class="mobile-only">
+<div class="biome-window" role="region" aria-label="Vandret kortvisning" tabindex="0">
+<div class="biome-strip">
+<article class="biome-card">
+<div class="image-frame biome-image crop-25">
+<img class="" src="assets/images/BIOME TÆT PÅ VAND.2.png" width="684" height="337" alt="TÆT PÅ VAND">
+</div>
+<p>TÆT PÅ VAND</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-26">
+<img class="" src="assets/images/HUSKORT 7.png" width="684" height="337" alt="EFTERÅR">
+</div>
+<p>EFTERÅR</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-27">
+<img class="" src="assets/images/HUSKORT 1.png" width="684" height="337" alt="BJERG">
+</div>
+<p>BJERG</p>
+</article>
+<article class="biome-card">
+<div class="image-frame biome-image crop-28">
+<img class="" src="assets/images/BIOME SNE.png" width="684" height="337" alt="SNE">
+</div>
+<p>SNE</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="home-houses section-gap">
+<div class="desktop-only">
+<h2>
+<a href="husinspiration.html">INSPIRATION TIL DET NÆSTE HUS</a>
+</h2>
+<div class="variant-carousel houses-carousel" data-variant-carousel>
+<div class="variant-panel" data-panel="0">
+<div class="carousel-cards">
+<a class="house-card" href="byggeguide.html">
+<div class="image-frame house-image crop-1">
+<img class="" src="assets/images/HUSKORT 9 .png" width="336" height="425" alt="Tidewood">
+</div>
+<p class="card-caption">Tidewood – Easy</p>
+</a>
+<article class="house-card">
+<div class="image-frame house-image crop-2">
+<img class="" src="assets/images/HUSKORT 3.png" width="336" height="425" alt="Forest Haven">
+</div>
+<p class="card-caption">Forest Haven – Experienced</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-3">
+<img class="" src="assets/images/HUSKORT 6.png" width="336" height="425" alt="Amber Loft">
+</div>
+<p class="card-caption">Amber Loft – Experienced</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-4">
+<img class="" src="assets/images/HUSKORT 1.png" width="336" height="425" alt="Willow Cottage">
+</div>
+<p class="card-caption">Willow Cottage – Easy</p>
+</article>
+</div>
+<button type="button" class="carousel-arrow next" data-variant="1" aria-label="Vis næste kort">&gt;</button>
+</div>
+<div class="variant-panel" data-panel="1" hidden>
+<div class="carousel-cards">
+<article class="house-card">
+<div class="image-frame house-image crop-5 default-fit">
+<img class="" src="assets/images/HUSKORT 7.png" width="336" height="425" alt="Willow Manor">
+</div>
+<p class="card-caption">Willow Manor – Easy</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-6">
+<img class="" src="assets/images/HUSKORT 4.png" width="336" height="425" alt="Pinecrest">
+</div>
+<p class="card-caption">Pinecrest – Experienced</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-7">
+<img class="" src="assets/images/HUSKORT 5.png" width="336" height="425" alt="Dune Retreat">
+</div>
+<p class="card-caption">Dune Retreat – Easy</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-8">
+<img class="" src="assets/images/HUSKORT 8.png" width="336" height="425" alt="Woodhouse">
+</div>
+<p class="card-caption">Woodhouse – Easy</p>
+</article>
+</div>
+<button type="button" class="carousel-arrow previous" data-variant="0" aria-label="Vis forrige kort">&lt;</button>
+</div>
+</div>
+</div>
+<div class="mobile-only">
+<h2>INSPIRATION TIL DET NÆSTE HUS</h2>
+<div class="project-window" role="region" aria-label="Vandret kortvisning" tabindex="0">
+<div class="project-strip">
+<a class="house-card" href="byggeguide.html">
+<div class="image-frame house-image crop-9 default-fit">
+<img class="" src="assets/images/HUSKORT 9 .png" width="167" height="215" alt="Tidewood">
+</div>
+<p class="card-caption">Tidewood</p>
+</a>
+<article class="house-card">
+<div class="image-frame house-image crop-10">
+<img class="" src="assets/images/HUSKORT 7.png" width="167" height="215" alt="Willow Manor">
+</div>
+<p class="card-caption">Willow Manor</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-11">
+<img class="" src="assets/images/HUSKORT 1.png" width="167" height="215" alt="Willow Cottage">
+</div>
+<p class="card-caption">Willow Cottage</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-12">
+<img class="" src="assets/images/HUSKORT 3.png" width="167" height="215" alt="Forest Haven">
+</div>
+<p class="card-caption">Forest Haven</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-13">
+<img class="" src="assets/images/HUSKORT 4.png" width="167" height="215" alt="Pinecrest">
+</div>
+<p class="card-caption">Pinecrest</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-14 default-fit">
+<img class="" src="assets/images/HUSKORT 6.png" width="167" height="215" alt="Amber Loft">
+</div>
+<p class="card-caption">Amber Loft</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-15">
+<img class="" src="assets/images/HUSKORT 8.png" width="167" height="215" alt="Woodhouse">
+</div>
+<p class="card-caption">Woodhouse</p>
+</article>
+<article class="house-card">
+<div class="image-frame house-image crop-16">
+<img class="" src="assets/images/HUSKORT 5.png" width="167" height="215" alt="Dune Retreat">
+</div>
+<p class="card-caption">Dune Retreat</p>
+</article>
+</div>
+</div>
+<a class="guide-button " href="husinspiration.html">SE MERE &gt;</a>
+</div>
+</section>
+<section class="guide-cards section-gap">
+<div class="desktop-only">
+<h2>MATERIALE GUIDES</h2>
+<div class="guide-card-grid">
+<a class="recipe-card" href="materialeguide.html">
+<div class="image-frame recipe-image desktop-only crop-33">
+<img class="" src="assets/images/MATERIALEKORT CRAFTING TABLE.png" width="680" height="342" alt="Crafting table">
+</div>
+<div class="image-frame recipe-image mobile-only crop-34">
+<img class="" src="assets/images/craft crafting table.png" width="348" height="206" alt="Crafting table">
+</div>
+<p class="card-caption">Crafting table</p>
+</a>
+<article class="recipe-card">
+<div class="image-frame recipe-image crop-35">
+<img class="" src="assets/images/MATERIALEKORT COBBLESTONE STAIRS.png" width="680" height="342" alt="Cobblestone stairs">
+</div>
+<p class="card-caption">Cobblestone stairs</p>
+</article>
+</div>
+<span class="guide-button inactive">SE MERE &gt;</span>
+</div>
+<div class="mobile-only mobile-guide">
+<h2>MATERIALEGUIDES</h2>
+<a class="recipe-card" href="materialeguide.html">
+<div class="image-frame recipe-image desktop-only crop-36">
+<img class="" src="assets/images/MATERIALEKORT CRAFTING TABLE.png" width="680" height="342" alt="Crafting table">
+</div>
+<div class="image-frame recipe-image mobile-only crop-37">
+<img class="" src="assets/images/craft crafting table.png" width="348" height="206" alt="Crafting table">
+</div>
+<p class="card-caption">Crafting table</p>
+</a>
+<span class="guide-button inactive">SE MERE &gt;</span>
+</div>
+</section>
+<section class="guide-cards section-gap">
+<div class="desktop-only">
+<h2>UDSTYRSGUIDES</h2>
+<div class="guide-card-grid">
+<article class="recipe-card">
+<div class="image-frame recipe-image crop-38">
+<img class="" src="assets/images/UDSTYRKORT IRON PICKAXE.png" width="680" height="342" alt="Iron pickaxe">
+</div>
+<p class="card-caption">Iron pickaxe</p>
+</article>
+<article class="recipe-card">
+<div class="image-frame recipe-image crop-39">
+<img class="" src="assets/images/UDSTYRKORT SHEARS.png" width="680" height="342" alt="Shears">
+</div>
+<p class="card-caption">Shears</p>
+</article>
+</div>
+<span class="guide-button inactive">SE MERE &gt;</span>
+</div>
+<div class="mobile-only mobile-guide">
+<h2>UDSTYRSGUIDES</h2>
+<article class="recipe-card">
+<div class="image-frame recipe-image crop-40">
+<img class="" src="assets/images/UDSTYRKORT IRON PICKAXE.png" width="680" height="342" alt="Iron pickaxe">
+</div>
+<p class="card-caption">Iron pickaxe</p>
+</article>
+<span class="guide-button inactive">SE MERE &gt;</span>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="footer">
+<div class="footer-desktop desktop-only">
+<a href="#home-intro" aria-label="CraftLeaf forside">
+<img class="footer-logo" src="assets/images/Logo ai genereret chatgpt.png" width="1272" height="1237" alt="CraftLeaf-logo">
+</a>
+<div class="footer-brand">
+<p class="footer-name">CRAFTLEAF</p>
+<p class="footer-description">INSPIRATION OG GUIDES TIL DIT NÆSTE MINECRAFT-BYGGERI.</p>
+</div>
+<div class="footer-explore">
+<p class="footer-heading">UDFORSK CRAFTLEAF</p>
+<nav aria-label="Footerkategorier">
+<button type="button" class="nav-item cosmetic" data-cosmetic>BIOME</button>
+<a class="nav-item" href="husinspiration.html">HUSE</a>
+<a class="nav-item" href="materialeguide.html">CRAFTING TABLE</a>
+<button type="button" class="nav-item cosmetic" data-cosmetic>MATERIALE</button>
+<button type="button" class="nav-item cosmetic" data-cosmetic>UDSTYR</button>
+</nav>
+<p class="copyright">© 2026 CraftLeaf · Et skoleprojekt. Ikke tilknyttet Mojang eller Microsoft.</p>
+</div>
+</div>
+<div class="footer-mobile mobile-only">
+<a href="#begynder" aria-label="CraftLeaf forside">
+<img class="footer-logo" src="assets/images/Logo ai genereret chatgpt.png" width="1272" height="1237" alt="CraftLeaf-logo">
+</a>
+<div class="footer-brand">
+<p class="footer-name">CRAFTLEAF</p>
+<p class="footer-description">INSPIRATION OG GUIDES TIL DIT NÆSTE MINECRAFT-BYGGERI.</p>
+</div>
+<p class="footer-heading">UDFORSK CRAFTLEAF</p>
+<nav aria-label="Footerkategorier">
+<button type="button" class="nav-item cosmetic" data-cosmetic>BIOME</button>
+<a class="nav-item" href="husinspiration.html">HUSE</a>
+<a class="nav-item" href="materialeguide.html">CRAFTING TABLE</a>
+<button type="button" class="nav-item cosmetic" data-cosmetic>MATERIALE</button>
+<button type="button" class="nav-item cosmetic" data-cosmetic>UDSTYR</button>
+</nav>
+<p class="copyright">© 2026 CraftLeaf · Et skoleprojekt. Ikke tilknyttet Mojang eller Microsoft.</p>
+</div>
+</footer>
+</body>
+</html>
