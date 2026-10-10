@@ -1,0 +1,28 @@
+CRAFTLEAF – RETTET VERSION
+
+Upload index.html, husinspiration.html, byggeguide.html, materialeguide.html,
+css/, js/ og assets/ samlet i Simplys webrod (typisk public_html).
+Åbn først index.html lokalt, eller test efter upload.
+
+Rettet:
+- Kantede biomekort; huskort bevarer Figma-designets afrunding.
+- Hvide karruselpile.
+- Syv eksisterende byggetrin og originale lokale billeder bevaret.
+- Mobile huskort: billedvalg, navne og sværhedsgrader rettet.
+- Tekst om balkon fjernet, overskrifter harmoniseret.
+- Desktopmenuens HUSE og CRAFTING TABLE linker til de eksisterende sider.
+- Copyright på mobil.
+- Den fiktive video er en pladsholder og åbner ikke længere en uvedkommende video.
+- Materialeområdet på mobil har ikke længere 310 px tom plads før indholdet.
+
+Billeder – opdateret 10. oktober 2026:
+Alle billedreferencer bruger nu de nye filnavne i assets/images.
+Mobilforsidens banner og desktopopskriften til Crafting Table er gendannet
+fra deres præcise Figma-kilder. De øvrige billeder bruger de tilbageførte filer.
+Alle fire sider er visuelt kontrolleret i browser ved 390 og 1440 px bredde;
+alle 162 billedreferencer indlæses, også karrusellernes ekstra billeder.
+Se BILLEDKONTROL.md for billedmatch og kontrolresultater.
+
+Begrænsninger:
+Søgning og de øvrige fremtidige guides er stadig pladsholdere.
+Videoen er en pladsholder.
